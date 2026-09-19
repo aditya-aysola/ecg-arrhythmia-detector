@@ -1,19 +1,16 @@
-def insertion_sort(arr: list):
-    for i in range(1, len(arr)):
-        current = arr[i]
-        inner_index = i
-        while inner_index > 0:
-            if arr[inner_index - 1] > current:
-                temp = arr[inner_index - 1]
-                arr[inner_index - 1] = current
-                arr[inner_index] = temp
+import math
+import random as rd
 
-            inner_index -= 1
+def make_data() -> list:
+    arr = []
+    for i in range(0, 500):
+        arr.append(rd.randint(1, 100))
+    return arr
 
 def main():
-    arr = [5, 3, 4, 1, 2]
-    insertion_sort(arr)
+    arr = make_data()
     print(arr)
+    print(len(arr))
 
 
 if __name__ == "__main__":
